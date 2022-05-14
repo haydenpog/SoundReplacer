@@ -10,15 +10,15 @@ namespace SoundReplacer.Patches
 {
     public class HitSoundPatch
     {
-        private static List<AudioClip> _originalBadSounds;
-        private static List<AudioClip> _originalGoodLongSounds;
-        private static List<AudioClip> _originalGoodShortSounds;
+        private static List<AudioClip>? _originalBadSounds;
+        private static List<AudioClip>? _originalGoodLongSounds;
+        private static List<AudioClip>? _originalGoodShortSounds;
 
-        private static AudioClip[] _lastBadAudioClips;
-        private static string _lastBadSelected;
+        private static AudioClip[]? _lastBadAudioClips;
+        private static string? _lastBadSelected;
 
-        private static AudioClip[] _lastGoodAudioClips;
-        private static string _lastGoodSelected;
+        private static AudioClip[]? _lastGoodAudioClips;
+        private static string? _lastGoodSelected;
 
         [HarmonyPatch(typeof(NoteCutSoundEffect))]
         [HarmonyPatch("Awake", MethodType.Normal)]
@@ -43,7 +43,7 @@ namespace SoundReplacer.Patches
                 {
                     if (_lastBadSelected == Plugin.CurrentConfig.BadHitSound)
                     {
-                        ____badCutSoundEffectAudioClips = _lastBadAudioClips;
+                        ____badCutSoundEffectAudioClips = _lastBadAudioClips!;
                     }
                     else
                     {
@@ -87,8 +87,8 @@ namespace SoundReplacer.Patches
                 {
                     if (_lastGoodSelected == Plugin.CurrentConfig.GoodHitSound)
                     {
-                        ____shortCutEffectsAudioClips = _lastGoodAudioClips;
-                        ____longCutEffectsAudioClips = _lastGoodAudioClips;
+                        ____shortCutEffectsAudioClips = _lastGoodAudioClips!;
+                        ____longCutEffectsAudioClips = _lastGoodAudioClips!;
                     }
                     else
                     {

@@ -16,9 +16,9 @@ namespace SoundReplacer
     [Plugin(RuntimeOptions.SingleStartInit)]
     public class Plugin
     {
-        internal static Plugin Instance { get; private set; }
-        internal static IPALogger Log { get; private set; }
-        internal static PluginConfig CurrentConfig { get; private set; }
+        internal static Plugin Instance { get; private set; } = null!;
+        internal static IPALogger Log { get; private set; } = null!;
+        internal static PluginConfig CurrentConfig { get; private set; } = null!;
 
         [Init]
         public void Init(Config config, IPALogger logger)

@@ -10,10 +10,10 @@ namespace SoundReplacer.Patches
 {
     public class MenuMusicPatch
     {
-        private static AudioClip _originalMenuMusicClip;
-        
-        private static AudioClip _lastMenuMusicClip;
-        private static string _lastMusicSelected;
+        private static AudioClip? _originalMenuMusicClip;
+
+        private static AudioClip? _lastMenuMusicClip;
+        private static string? _lastMusicSelected;
 
         [HarmonyPatch(typeof(SongPreviewPlayer))]
         [HarmonyPatch("Start", MethodType.Normal)]
@@ -38,7 +38,7 @@ namespace SoundReplacer.Patches
                 {
                     if (_lastMusicSelected == Plugin.CurrentConfig.MenuMusic)
                     {
-                        ____defaultAudioClip = _lastMenuMusicClip;
+                        ____defaultAudioClip = _lastMenuMusicClip!;
                     }
                     else
                     {

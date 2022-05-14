@@ -10,7 +10,7 @@ namespace SoundReplacer
 {
     internal class ReplacerFlowCoordinator : FlowCoordinator
     {
-        private ReplacerSettingsView _settingsView;
+        private ReplacerSettingsView? _settingsView;
 
         public void Awake()
         {
@@ -20,7 +20,7 @@ namespace SoundReplacer
 
         protected override void DidActivate(bool firstActivation, bool addedToHierarchy, bool screenSystemEnabling)
         {
-            if (!firstActivation) 
+            if (!firstActivation)
                 return;
 
             SetTitle("SoundReplacer");

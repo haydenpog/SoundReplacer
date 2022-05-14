@@ -12,8 +12,8 @@ namespace SoundReplacer
     internal static class SoundLoader
     {
         public static List<string> GlobalSoundList = new List<string>();
-        
-        private static AudioClip _cachedEmpty;
+
+        private static AudioClip? _cachedEmpty;
 
         public static void GetSoundLists()
         {
@@ -84,9 +84,9 @@ namespace SoundReplacer
             var fullPath = GetFullPath(name);
             var request = GetRequest(fullPath);
 
-            AudioClip loadedAudio = null;
+            AudioClip? loadedAudio = null;
             var task = request.SendWebRequest();
-            
+
             // while I would normally kill people for this
             // we are loading a local file, so it should be
             // basically instant success or error
