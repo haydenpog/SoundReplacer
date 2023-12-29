@@ -67,6 +67,9 @@
 
   <ItemGroup>
     <EmbeddedResource Include="manifest.json" />
+    <EmbeddedResource Include="ReplacerSettingsView.bsml">
+      <DependentUpon>ReplacerSettingsView.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
