@@ -15,8 +15,7 @@ namespace SoundReplacer.Patches
         private static AudioClip[]? _lastClickClips;
         private static string? _lastClickSelected;
 
-        [HarmonyPatch(typeof(BasicUIAudioManager))]
-        [HarmonyPatch("Start", MethodType.Normal)]
+        [HarmonyPatch(typeof(BasicUIAudioManager), nameof(BasicUIAudioManager.Start))]
         public class BasicUIAudioManagerPatch
         {
             public static void Prefix(ref AudioClip[] ____clickSounds)

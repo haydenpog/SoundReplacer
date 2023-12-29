@@ -15,8 +15,7 @@ namespace SoundReplacer.Patches
         private static AudioClip? _lastMenuMusicClip;
         private static string? _lastMusicSelected;
 
-        [HarmonyPatch(typeof(SongPreviewPlayer))]
-        [HarmonyPatch("Start", MethodType.Normal)]
+        [HarmonyPatch(typeof(SongPreviewPlayer), nameof(SongPreviewPlayer.Start))]
         public class SongPreviewPlayerPatch
         {
             public static void Prefix(ref AudioClip ____defaultAudioClip)

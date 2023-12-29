@@ -20,8 +20,7 @@ namespace SoundReplacer.Patches
         private static AudioClip[]? _lastGoodAudioClips;
         private static string? _lastGoodSelected;
 
-        [HarmonyPatch(typeof(NoteCutSoundEffect))]
-        [HarmonyPatch("Awake", MethodType.Normal)]
+        [HarmonyPatch(typeof(NoteCutSoundEffect), nameof(NoteCutSoundEffect.Awake))]
         public class BadCutSoundPatch
         {
             public static void Prefix(ref AudioClip[] ____badCutSoundEffectAudioClips)
@@ -55,8 +54,7 @@ namespace SoundReplacer.Patches
             }
         }
 
-        [HarmonyPatch(typeof(NoteCutSoundEffectManager))]
-        [HarmonyPatch("Start", MethodType.Normal)]
+        [HarmonyPatch(typeof(NoteCutSoundEffectManager), nameof(NoteCutSoundEffectManager.Start))]
         public class HitSoundsPatch
         {
             public static void Prefix(ref AudioClip[] ____longCutEffectsAudioClips, ref AudioClip[] ____shortCutEffectsAudioClips)

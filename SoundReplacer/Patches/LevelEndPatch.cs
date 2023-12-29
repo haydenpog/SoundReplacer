@@ -16,8 +16,7 @@ namespace SoundReplacer.Patches
         private static AudioClip? _lastFailClip;
         private static string? _lastFailSelected;
 
-        [HarmonyPatch(typeof(ResultsViewController))]
-        [HarmonyPatch("DidActivate", MethodType.Normal)]
+        [HarmonyPatch(typeof(ResultsViewController), nameof(ResultsViewController.DidActivate))]
         public class DidActivatePatch
         {
             public static void Prefix(bool addedToHierarchy, ref SongPreviewPlayer ____songPreviewPlayer, ref LevelCompletionResults ____levelCompletionResults)

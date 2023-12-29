@@ -92,7 +92,7 @@ namespace SoundReplacer
             // basically instant success or error
             while (!task.isDone) { }
 
-            if (request.isNetworkError || request.isHttpError)
+            if (request.result is not UnityWebRequest.Result.Success)
             {
                 Plugin.Log.Error($"Failed to load file {name} with error {request.error}");
                 ReplaceMissing(name);

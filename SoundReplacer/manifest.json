@@ -3,12 +3,11 @@
   "id": "SoundReplacer",
   "name": "SoundReplacer",
   "author": "Otiosum",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Easily replace in-game sounds",
-  "gameVersion": "1.19.0",
+  "gameVersion": "1.29.4",
   "dependsOn": {
-    "BSIPA": "^4.2.1",
-    "BeatSaberMarkupLanguage": "^1.6.1"
-  },
-  "features": []
+    "BSIPA": "^4.3.0",
+    "BeatSaberMarkupLanguage": "^1.7.5"
+  }
 }
